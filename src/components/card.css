@@ -1,0 +1,27 @@
+.card-direction {
+    display: flex;
+    justify-content: center;
+}
+
+.card-container {
+    flex-direction: column;
+    width: 700px;
+    height: 110px;
+    border: 1px solid #a4a4a4;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    background: rgb(159,118,255);
+    background: linear-gradient(261deg, rgba(159,118,255,1) 0%, rgba(236,203,232,1) 100%);
+}
+
+.card-container:hover {
+    cursor: pointer;
+}
+
+.card-title {
+    font-size: 40px;
+}
+
+.card-preco{
+    font-size: 30px;
+}
