@@ -74,15 +74,6 @@ export default function FormDialog(props) {
       >
         <DialogTitle id="form-dialog-title">Editar</DialogTitle>
         <DialogContent>
-        <TextField
-            autoFocus
-            margin="dense"
-            id="id"
-            label="id"
-            defaultValue={props.id}
-            type="text"
-            fullWidth
-          />
           <TextField
             autoFocus
             margin="dense"
@@ -109,6 +100,16 @@ export default function FormDialog(props) {
             id="categoria"
             label="Categoria"
             defaultValue={props.categoria}
+            type="text"
+            onChange={handleChangeValues}
+            fullWidth
+          />
+          <TextField
+            autoFocus
+            margin="dense"
+            id="id"
+            label="idGames"
+            defaultValue={props.id}
             type="text"
             onChange={handleChangeValues}
             fullWidth

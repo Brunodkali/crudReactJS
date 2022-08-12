@@ -10,11 +10,12 @@ app.use(express.json());
 
 const db = mysql.createPool({
     host:'localhost',
-    port: 3307,
+    port: 3306,
     user:'root',
     password: 'usbw',
-    database:'crudgames'
-})
+    database:'crudgames',
+});
+
 
 app.post('/register', (req, res) => {
     const { nome } = req.body;
@@ -44,9 +45,9 @@ app.put("/edit", (req, res) =>{
     const { preco } = req.body;
     const { categoria } = req.body;
 
-    let SQL = "UPDATE jogos SET nome = ?, preco = ?, categoria = ? WHERE idGames = ?";
-
-    db.query(SQL, [id, nome, preco, categoria], (err, result)=>{
+    let SQL = "UPDATE jogos SET nome = ?, preco = ?, categoria = ? WHERE id = ?";
+    
+    db.query(SQL, [nome, preco, categoria, id], (err, result)=>{
         if(err) console.log(err);
         else res.send(result);
     });
@@ -62,10 +63,10 @@ app.listen(3001, ()=>{
 /* MongoDB */
 
 /*const host = '127.0.0.1';
-const port = '27017';
-const url = `mongodb://${host}:${port}/Crudgames`;
+const port = '3306';
+const url = `mongodb://${host}:${port}/crudgames`;
 
-const db = mongoose.connection;
+const database = mongoose.connection;
 mongoose.connect(`${url}`);
 db.on('error', (err)=> console.log(err));
 db.once('open', ()=> console.log('Banco de dados conectado'));
@@ -77,7 +78,7 @@ var user = {
 
 };
 
-db.collection('games').insertOne(user);
+database.collection('games').insertOne(user);
 
 console.log('User:');
 console.log(user);*/

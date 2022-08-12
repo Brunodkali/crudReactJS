@@ -74,15 +74,15 @@ function App() {
             >Cadastrar
             </button>
         </div>
-        {typeof listJogos !== "undefined" && listJogos.map((value)=>{
+        {typeof listJogos !== "undefined" && listJogos.map((values)=>{
         return <Card 
-        key={value.id}
+        key={values.id}
         listCard={listJogos}
         setListCard={setListJogos}
-        id={value.id}
-        nome={value.nome}
-        preco={value.preco}
-        categoria={value.categoria}
+        id={values.id}
+        nome={values.nome}
+        preco={values.preco}
+        categoria={values.categoria}
         ></Card>
       }) };
       </div>
